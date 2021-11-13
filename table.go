@@ -60,6 +60,7 @@ func NewTable() *Table {
 
 func (t *Table) check() error {
 	//TODO 各オプション設定のチェックを行う
+	return nil
 }
 
 func (t *Table) Options(opts ...TableOption) {
