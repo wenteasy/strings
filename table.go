@@ -227,6 +227,16 @@ func (t *Table) decideColumnDigit() error {
 		if width <= TableExpandWidth {
 			return fmt.Errorf("could not decide column[%d] width", idx)
 		}
+
+		if len(t.headers[idx]) > width {
+			width = len(t.headers[idx])
+		}
+
+		//system
+		if len(DefaultTableOmitCharacter) > width {
+			width = len(DefaultTableOmitCharacter)
+		}
+
 		tc.digit = width
 	}
 
